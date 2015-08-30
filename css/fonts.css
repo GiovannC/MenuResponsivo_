@@ -1,0 +1,55 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('..//fonts/icomoon.eot?-mlzx11');
+	src:url('..//fonts/icomoon.eot?#iefix-mlzx11') format('embedded-opentype'),
+		url('..//fonts/icomoon.ttf?-mlzx11') format('truetype'),
+		url('..//fonts/icomoon.woff?-mlzx11') format('woff'),
+		url('..//fonts/icomoon.svg?-mlzx11#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+	content: "\e600";
+}
+.icon-location:before {
+	content: "\e603";
+}
+.icon-earth:before {
+	content: "\e604";
+}
+.icon-dot-single:before {
+	content: "\e602";
+}
+.icon-chevron-small-down:before {
+	content: "\e601";
+}
+.icon-home:before {
+	content: "\e60a";
+}
+.icon-suitcase:before {
+	content: "\e606";
+}
+.icon-rocket:before {
+	content: "\e607";
+}
+.icon-mail2:before {
+	content: "\e608";
+}
+.icon-earth2:before {
+	content: "\e609";
+}

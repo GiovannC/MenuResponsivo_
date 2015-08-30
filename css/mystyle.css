@@ -1,0 +1,159 @@
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background: #FEFEFE;
+}
+/* Contenedor del menu de la vista mobile */
+.menu_bar{
+	display: none;
+}
+header{
+	width: 100%;
+}
+header nav{
+	background: #023859;
+	/* z-index posicionamos la navegación por encima de todo */
+	z-index: 1000; 
+	max-width: 1000px;
+	/* width para que quede un margen o espacio */
+	width: 95%;
+	margin: 20px auto;
+}
+header nav ul{
+	list-style: none;
+}
+header nav ul li{
+	/*display:inline-block acomodar los menu horizontalmente */
+	display: inline-block;
+	/* --- position:relative para los sub-menus ---- */
+	position: relative;
+}
+header nav ul li:hover{
+	background:#E6344A;
+}
+header nav ul li a{
+	color: #fff;
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+}
+header nav ul li a span{
+	margin-right: 10px;
+}
+
+/* --- Sub menu --- */
+
+/* Al pasar el mouse por el elemento li la clase children se mostrara */
+header nav ul li:hover .children{
+	display: block;
+}
+/* Se oculta el contenido del submenu */
+header nav ul li .children{
+	display: none;
+	background: #011826;
+	/* position:absolute se acomodan los elementos dentro del submenu del padre - header nav ul li- que tiene la position relative  */
+	position: absolute;
+	width: 150%;
+	z-index: 1000;
+}
+header nav ul li .children li{
+	/* display:block el submenu abarca el 100%; */
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+header nav ul li .children li a{
+	/* display:block el submenu abarca el 100%; */
+	display: block;
+}
+header nav ul li .children li a span{
+	float: right;
+	position: relative;
+	top: 3px;
+	margin-right: 0;
+	margin-left: 10px;
+}
+/* .caret es el contenedor de la flechita hacia abajo que indica que hay un submenu*/
+header nav ul li .caret{
+	position: relative;
+	top: 3px;
+	margin-left: 10px;
+	margin-right: 0;
+}
+@media screen and (max-width: 800px){
+	body{
+		/*El padding-top:; es de la altura de la barra de navegación movil para que asi se pueda leer el texto que hay en el section y no lo oculte la barra de navegación que esta fija*/
+		padding-top: 76px;
+	}
+	/* .menu_bar: es el menu que aparece para mobile*/
+	.menu_bar{
+		display: block;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		background: #E6344A;
+	}
+	/* .bt_menu: es el que le da el alto al menu */
+	.menu_bar .bt_menu{
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+
+	}
+	.menu_bar span{
+		float: right;
+		font-size: 36px;
+	}
+	/* header nav: es el menu normal y se coloca fixed para fijarlo y con right se empuja desde la derecha 100% para ocultarlo, pero la funcionalidad se da desde jquery */
+	header nav{
+		/* width: decimos cuanto queremos que abarque el menu */
+		width: 80%;
+		position: fixed;
+		right: 100%;
+		margin:0;
+		/* overflow: scroll si la pantalla del dspositivo es muy pequeña aparece el scroll */
+		overflow: scroll;
+		/* Al darle la altura del 100% el menu contacto no se muestra por el desplazamiento de la altura del menu_bar "76px" */
+		/* calc: calcular */
+		/* ---  La funcion calc: se utiliza para que la parte que queda oculta abajo por los 76px de la altura del menu no lo afecte y se muestre --- */
+		height: calc(100% - 76px);
+	}
+	header nav ul li{
+		display: block;
+		border-bottom: 1px solid rgba(255,255,255,.5);
+	}
+	header nav ul li a{
+		display: block;
+	}
+	/* Ocultamos el submenu para realizar la funcionalidad de "mostrar" con jQuery*/
+	header nav ul li:hover .children{
+		display: none;
+	}
+	header nav ul li .children{
+		width: 100%;
+		/* position:relative: solucionamos el problema que al pasar el mouse sobre el menu "proyectos" se desplieje el submenu y oculte el resto del menu,
+		   con position relative al seleccionar el submenu el resto del menu se desplaza haca abajo*/
+		position: relative;
+	}
+	header nav ul li .children li a{
+		margin-left: 20px;
+	}
+	/* Se desplaza la flechita "hacia abajo" que indica que hay un submenu a la parte derecha*/
+	header nav ul li .caret{
+		float: right;
+	}
+
+}
+
+
+
+
